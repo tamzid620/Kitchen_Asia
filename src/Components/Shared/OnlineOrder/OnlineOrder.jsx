@@ -114,7 +114,7 @@ const OnlineOrder = () => {
                     {/* food name,description and like logo  */}
                     <h1 className="flex justify-between items-center">
                       <h2>
-                        <h3 className=" text-xl text-white font-semibold uppercase mt-5">
+                        <h3 style={{fontFamily:"Montserrat, sans-serif "}} className=" text-xl text-white font-semibold uppercase mt-5">
                           {onlineOrder.foodName}
                         </h3>
                         <h3 className="text-[#808080] font-semibold">
@@ -124,14 +124,14 @@ const OnlineOrder = () => {
                       <h1
                       onClick={() => handleLikeClick(onlineOrder.id)}
                         className="text-white hover:text-[#f9941e]
-                     border border-[#f9941e] hover:border-[#f9941e] rounded-full"
+                     border border-white hover:border-[#f9941e] rounded-full"
                       >
                         <BiSolidLike size={25} className="p-1" />
                       </h1>
                     </h1>
                     {/* price and rating  */}
                     <div className="flex justify-between items-center mt-5">
-                      <div className="flex text-white text-xl font-mono font-bold">
+                      <div className="flex text-[#f9941e] text-xl font-mono font-bold">
                         <span>{onlineOrder.price}</span> <span>৳</span>
                       </div>
                       {/* react rating section  */}
@@ -156,7 +156,7 @@ const OnlineOrder = () => {
                     <button
                       title="Add to Cart"
                       onClick={() => handleOrderNowClick(onlineOrder.id)}
-                      className=" flex items-center gap-2 border border-[#f9941e] bg-transparent text-white
+                      className=" flex items-center gap-2 border border-white bg-transparent text-white
              hover:border-[#f9941e] hover:text-[#f9941e] 
 font-bold px-3 py-3 mt-3 rounded-md "
                     >
