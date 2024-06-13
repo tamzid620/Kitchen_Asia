@@ -59,7 +59,8 @@ const NavigationBar = () => {
     };
   }, []);
 
-  const navBarClass = scrolling ? "bg-slate-950" : "bg-gray-800";
+  // const navBarClass = scrolling ? "bg-slate-950" : "bg-gray-800";
+  const navBarClass = scrolling ? "bg-gray-300" : "bg-gray-200";
 
   // navmenu open close option -----------
   useEffect(() => {
@@ -142,7 +143,7 @@ font-bold px-3 py-1 rounded-md "
           <Link to="/cart">
             <button
               title="Cart"
-              className="hover:text-white text-yellow-500 font-bold px-3 py-1 rounded-md"
+              className="hover:text-black text-[#bc161c] font-bold px-3 py-1 rounded-md"
             >
               <BsFillCartCheckFill className="w-[20px] h-[20px]" />
             </button>
@@ -151,7 +152,7 @@ font-bold px-3 py-1 rounded-md "
           <Link to="/wishlist">
             <button
               title="Wishlist"
-              className="hover:text-white text-yellow-500 font-bold px-3 py-1 rounded-md"
+              className="hover:text-black text-[#bc161c] font-bold px-3 py-1 rounded-md"
             >
               <BsHeartFill className="w-[20px] h-[20px]" />
             </button>
@@ -164,7 +165,7 @@ font-bold px-3 py-1 rounded-md "
         <div className={`line3 ${isOpen ? "line3-open" : ""}`}></div>
       </div>
 
-      <ul className="nav-links text-yellow-500">
+      <ul className="nav-links text-[#bc161c]">
         <li title="Home">
           <Link to="/">Home</Link>
         </li>
@@ -192,7 +193,7 @@ font-bold px-3 py-1 rounded-md "
               <Link to="/cart">
                 <button
                   title="Cart"
-                  className=" hover:text-white text-yellow-500 font-bold px-3 py-1
+                  className="text-[#bc161c] hover:text-black font-bold px-3 py-1
       rounded-md"
                 >
                   {" "}
@@ -203,7 +204,7 @@ font-bold px-3 py-1 rounded-md "
               <Link to="/wishlist">
                 <button
                   title="Wishlist"
-                  className=" hover:text-white text-yellow-500 font-bold px-3 py-1
+                  className="text-[#bc161c] hover:text-black font-bold px-3 py-1
       rounded-md"
                 >
                   {" "}
@@ -217,8 +218,8 @@ font-bold px-3 py-1 rounded-md "
               <button
                 title="create order"
                 className="
-               border border-yellow-500 bg-transparent text-yellow-500
-                 hover:border-white hover:text-white 
+               border border-[#bc161c] bg-transparent text-[#bc161c]
+                 hover:border-black hover:text-black 
 font-bold px-3 py-1 rounded-md "
                 onClick={() =>
                   document.getElementById("my_modal_4").showModal()

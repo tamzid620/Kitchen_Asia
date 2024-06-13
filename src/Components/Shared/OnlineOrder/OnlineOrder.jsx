@@ -8,9 +8,10 @@ import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Rating from "react-rating";
-import bgBanner2 from "../../../../public/images/bg-Banner-5.jpeg";
+// import bgBanner2 from "../../../../public/images/bg-Banner-5.jpeg";
 import Swal from "sweetalert2";
 import RatingModal from "../RatingModal/RatingModal";
+import hr from '../../../../public/icons/hr.png' ;
 
 const OnlineOrder = () => {
   Aos.init();
@@ -64,14 +65,16 @@ const OnlineOrder = () => {
 
   return (
     <div
-      style={{
-        backgroundImage: `url(${bgBanner2})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      // style={{
+      //   backgroundImage: `url(${bgBanner2})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      // }}
+      className="relative bg-transparent"
     >
+        <div className="absolute inset-0 bg-black opacity-60" />
       {/* title section  */}
-      <div className="flex justify-center mt-16 pt-10 ">
+      <div className=" flex justify-center Pt-16 pt-10 ">
         <div
           data-aos="flip-down"
           data-aos-easing="linear"
@@ -83,7 +86,7 @@ const OnlineOrder = () => {
           >
             Online Order
           </h1>
-          <img src="../../../../public/icons/hr.svg" alt="" />
+          <img src={hr} alt="" />
         </div>
       </div>
       {/*------------------------- information section ------------------------ */}
@@ -99,7 +102,7 @@ const OnlineOrder = () => {
               <div
                 key={onlineOrder.id}
                 data-aos="flip-up"
-                className={`bg-slate-900 rounded-xl border-t-2 border-yellow-500 shadow-lg shadow-yellow-500 p-3 w-[280px] transition-transform transform hover:scale-105`}
+                className={`bg-gray-900 rounded-xl border-t-2 border-[#f9941e] shadow-md shadow-[#f9941e] p-3 w-[280px] transition-transform transform hover:scale-105`}
               >
                 <div>
                   <img
@@ -120,15 +123,15 @@ const OnlineOrder = () => {
                       </h2>
                       <h1
                       onClick={() => handleLikeClick(onlineOrder.id)}
-                        className="text-yellow-500 hover:text-white
-                     border border-yellow-500 hover:border-white rounded-full"
+                        className="text-white hover:text-[#f9941e]
+                     border border-[#f9941e] hover:border-[#f9941e] rounded-full"
                       >
                         <BiSolidLike size={25} className="p-1" />
                       </h1>
                     </h1>
                     {/* price and rating  */}
                     <div className="flex justify-between items-center mt-5">
-                      <div className="flex text-yellow-500 text-xl font-mono font-bold">
+                      <div className="flex text-white text-xl font-mono font-bold">
                         <span>{onlineOrder.price}</span> <span>৳</span>
                       </div>
                       {/* react rating section  */}
@@ -153,8 +156,8 @@ const OnlineOrder = () => {
                     <button
                       title="Add to Cart"
                       onClick={() => handleOrderNowClick(onlineOrder.id)}
-                      className=" flex items-center gap-2 border border-yellow-500 bg-transparent text-yellow-500
-             hover:border-white hover:text-white 
+                      className=" flex items-center gap-2 border border-[#f9941e] bg-transparent text-white
+             hover:border-[#f9941e] hover:text-[#f9941e] 
 font-bold px-3 py-3 mt-3 rounded-md "
                     >
                       <span> Add to Cart </span>

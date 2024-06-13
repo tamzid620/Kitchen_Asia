@@ -45,7 +45,7 @@ nav {
 }
 
 .nav-links li a:hover {
-    color: white;
+    color: black;
 }
 
 .nav-links li {
@@ -58,7 +58,7 @@ nav {
     height: 3px;
     width: 0%;
     /* background-color: yellow; */
-    background-color: white;
+    background-color: black;
     position: absolute;
     transition: all ease-in-out 250ms;
     margin: 0 0 0 10%;
@@ -74,7 +74,7 @@ nav {
     width: 30px;
     height: 3px;
     /* background: #f2f5f7; */
-    background: rgba(255, 255, 0, 0.817);
+    background: #bc161c;
     margin: 5px;
     transition: all 0.3s ease;
   }
@@ -117,7 +117,7 @@ nav {
 
     .nav-links {
         position: fixed;
-        background: #131418;
+        background: rgb(219, 219, 219);
         height: 100vh;
         width: 100%;
         flex-direction: column;

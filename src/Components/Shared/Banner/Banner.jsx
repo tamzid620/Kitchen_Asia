@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import homeLogo from "../../../../public/icons/Kitchen-Asia-Updated-Logo-01.png";
 import banner from "../../../../public/images/Banner5.jpg";
 import bannerSm from "../../../../public/images/BannerSm5.jpg";
 import Aos from "aos";
@@ -37,13 +38,14 @@ const backgroundStyle = {
                 data-aos-easing="linear"
                 data-aos-duration="1000"
               >
-                <span className=" sm: mb-3 text-white flex items-center">
+                <span style={{ fontFamily: "Montserrat, sans-serif " ,fontWeight: 500 }}
+                 className=" sm: mb-3 text-white flex items-center">
                   {" "}
                   Welcome to
                 </span>
                 <img
-                  className=" me-2 w-[100px]"
-                  src="../../../../public/icons/logo-svg.png "
+                  className=" me-2 w-[90px]"
+                  src={homeLogo}
                   alt=""
                 />
               </div>
@@ -57,13 +59,14 @@ const backgroundStyle = {
                 data-aos-duration="1200"
               >
                 The World Best{" "}
-                <span className="text-[#FFD700]">Restaurant</span> Website
+                <span className="text-[#f9941e]">Restaurant</span> Website
               </h1>
               <p
                 className="text-white"
                 data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="1500"
+                style={{ fontFamily: "Montserrat, sans-serif " ,fontWeight: 500 }}
               >
                 {" "}
                 When I got to know about freelancing, I felt excited about it
@@ -76,8 +79,8 @@ const backgroundStyle = {
             <div>
               <Link to="/menu">
                 <button
-                  className=" border border-yellow-500 bg-transparent text-yellow-500
-             hover:border-white hover:text-white hover:shadow-lg hover:shadow-white
+                  className=" border border-[#f9941e] bg-transparent text-[#f9941e]
+             hover:border-[#bc161c] hover:text-[#bc161c] hover:shadow-lg hover:shadow-[#bc161c]
 font-bold px-3 py-3 mt-5 rounded-md "
                   data-aos="fade-down"
                   data-aos-easing="linear"

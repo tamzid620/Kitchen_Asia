@@ -8,9 +8,13 @@ const Home = () => {
   return (
     <div>
       <Banner />
+      <div className="h-24 bg-gray-300"></div>
       <SpecialMenu />
+      <div className="h-24 bg-gray-300"></div>
       <OnlineOrder />
+      <div className="h-24 bg-gray-300"></div>
       <Cattering />
+      <div className="h-24 bg-gray-300"></div>
       <Packages/>
 
     </div>

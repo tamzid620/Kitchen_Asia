@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import catteringImage from '../../../../public/images/cattering_service.jpg'
-import bgBanner3 from '../../../../public/images/bg-banner3.jpg'
+import bgBanner3 from '../../../../public/images/bg-banner3.jpg' ;
+import hr from "../../../../public/icons/hr.png" ;
 
 const Cattering = () => {
     return (
@@ -13,12 +14,12 @@ const Cattering = () => {
         }}
       >
             {/* title section  */}
-            <div className="flex justify-center mt-16 pt-10"
+            <div className="flex justify-center pt-10"
              data-aos="zoom-in-down" data-aos-easing="linear"
             data-aos-duration="500">
                 <div>
                     <h1 style={{ fontFamily: 'Mooli, sans-serif' }} className="flex justify-center text-3xl text-white font-semibold">Cattering</h1>
-                    <img src="../../../../public/icons/hr.svg" alt="" />
+                    <img src={hr} alt="" />
                 </div>
             </div>
 

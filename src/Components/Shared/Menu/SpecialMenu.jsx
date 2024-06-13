@@ -2,7 +2,8 @@ import { BsHeartFill } from "react-icons/bs";
 import { toast } from "react-toastify";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import bgBanner1 from "../../../../public/images/bg-banner1.jpg";
+// import bgBanner1 from "../../../../public/images/DSCF7688.jpg";
+import hr from '../../../../public/icons/hr.png'
 
 const SpecialMenu = () => {
   Aos.init();
@@ -22,14 +23,16 @@ const SpecialMenu = () => {
 
   return (
     <div
-      style={{
-        backgroundImage: `url(${bgBanner1})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      // style={{
+      //   backgroundImage: `url(${bgBanner1})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      // }}
+      className="relative bg-transparent"
     >
+      <div className="absolute inset-0 bg-black opacity-60" />
       <div
-        className="max-w-screen-xl mx-auto mt-20 pt-3 pb-10"
+        className="max-w-screen-xl mx-auto pt-20  pb-10"
         data-aos="flip-right"
         data-aos-easing="linear"
         data-aos-duration="500"
@@ -44,12 +47,13 @@ const SpecialMenu = () => {
             >
               Special Menu
             </h1>
-            <img src="../../../../public/icons/hr.svg" alt="" />
+            <img src={hr} alt="" />
           </div>
         </div>
 
         {/*------------------------- information section ------------------------ */}
-        <div className=" flex justify-center sm: ms-2 sm: me-2 lg:ms-0 lg:me-0 mt-10">
+        <div className=" flex justify-center 
+        sm: ms-2 sm: me-2 lg:ms-0 lg:me-0 mt-10">
           <div className="mt-5 text-white grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 lg:gap-20">
             {/* grid section------1  */}
             <div>
@@ -63,13 +67,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Chicken Parmesan <span> --------------</span>
                       </h1>
                       <p className="">Mexican</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$10.00</p>
+                      <p className="text-[#f9941e]">$10.00</p>
                     </div>
                   </div>
                 </label>
@@ -85,13 +89,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Dan Dan Noodles <span> --------------</span>
                       </h1>
                       <p className="">Mexican</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$06.00</p>
+                      <p className="text-[#f9941e]">$06.00</p>
                     </div>
                   </div>
                 </label>
@@ -107,13 +111,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Chicken Parmesan <span> --------------</span>
                       </h1>
                       <p className="">Italian</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$10.00</p>
+                      <p className="text-[#f9941e]">$10.00</p>
                     </div>
                   </div>
                 </label>
@@ -129,13 +133,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Chicken Parmesan <span> --------------</span>
                       </h1>
                       <p className="">Mexican</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$10.00</p>
+                      <p className="text-[#f9941e]">$10.00</p>
                     </div>
                   </div>
                 </label>
@@ -151,13 +155,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Chicken Parmesan <span> --------------</span>
                       </h1>
                       <p className="">Mexican</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$10.00</p>
+                      <p className="text-[#f9941e]">$10.00</p>
                     </div>
                   </div>
                 </label>
@@ -176,13 +180,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Chicken Parmesan <span> --------------</span>
                       </h1>
                       <p className="">Mexican</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$10.00</p>
+                      <p className="text-[#f9941e]">$10.00</p>
                     </div>
                   </div>
                 </label>
@@ -198,13 +202,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Dan Dan Noodles <span> --------------</span>
                       </h1>
                       <p className="">Mexican</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$06.00</p>
+                      <p className="text-[#f9941e]">$06.00</p>
                     </div>
                   </div>
                 </label>
@@ -220,13 +224,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Chicken Parmesan <span> --------------</span>
                       </h1>
                       <p className="">Mexican</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$10.00</p>
+                      <p className="text-[#f9941e]">$10.00</p>
                     </div>
                   </div>
                 </label>
@@ -242,13 +246,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Chicken Parmesan <span> --------------</span>
                       </h1>
                       <p className="">Mexican</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$10.00</p>
+                      <p className="text-[#f9941e]">$10.00</p>
                     </div>
                   </div>
                 </label>
@@ -264,13 +268,13 @@ const SpecialMenu = () => {
                   />
                   <div className="flex items-start ms-3 gap-5 font-semibold">
                     <div>
-                      <h1 className="text-lg text-[#FFD700]">
+                      <h1 className="text-lg text-[#f9941e]">
                         Chicken Parmesan <span> --------------</span>
                       </h1>
                       <p className="">Mexican</p>
                     </div>
                     <div>
-                      <p className="text-[#FFD700]">$10.00</p>
+                      <p className="text-[#f9941e]">$10.00</p>
                     </div>
                   </div>
                 </label>
@@ -282,7 +286,7 @@ const SpecialMenu = () => {
         <div className="flex justify-center">
           <button
             onClick={handleWishlist}
-            className="flex items-center border border-yellow-500 bg-transparent text-yellow-500
+            className="flex items-center border border-[#f9941e] bg-transparent text-[#f9941e]
              hover:border-white hover:text-white 
 font-bold px-3 py-1  mt-3 rounded-md "
           >
