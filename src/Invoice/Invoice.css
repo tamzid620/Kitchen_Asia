@@ -1,0 +1,108 @@
+.school-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  
+  .top-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .invoice-parent{
+      width: 1000px;
+      overflow-x: auto;
+  }
+  .mLogo-Invoice {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+  }
+  .mLogo {
+    width: 90px;
+    margin-left: 5px;
+  }
+  .invoice {
+    font-weight: 600;
+    font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    margin-right: 5px;
+  }
+  .invoice-title{
+   margin-top: 10px;
+   text-align: end;
+  }
+  /* ----------------------------- */
+  .billedTo-billedDate {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .billedTo {
+    margin-left: 5px;
+  }
+  .billedTo h1 {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .billedDate {
+    margin-right: 5px;
+    text-align: end;
+  }
+  .billedDate h1{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  /* --------------------------------- */
+  .items {
+    margin-top: 50px;
+    /* border: 1px solid black; */
+  }
+  .hr {
+    border: 1px solid black;
+    /* margin: 10px 0; */
+  }
+  .table-head-div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .table-row-div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .total-div{
+    text-align: right;
+    font-weight: bold;
+  }
+  .ThankYou{
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: bolder;
+    margin-top: 50px;
+    font-size: 30px;
+  }
+  .paymentInformaiton{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .Namediv{
+    text-align: end;
+  }
+  .Namediv h1{
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  
+  
