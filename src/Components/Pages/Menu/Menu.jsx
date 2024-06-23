@@ -71,7 +71,7 @@ const Menu = () => {
 
 
   return (
-    <div>
+    <div className="bg-black">
       {/* title section */}
       <div
         style={{
@@ -100,36 +100,36 @@ const Menu = () => {
       ) : (
         
       /******************* * information section ******************/
-      <div className="max-w-screen-xl mx-auto mt-20 sm: ms-2 sm: me-2 lg:ms-0 lg:me-0">
+      <div className="max-w-screen-xl mx-auto mt-20 sm: ms-2 sm: me-2 lg:ms-0 lg:me-0 pb-10">
        {/* Tabs section */}
        <div className="flex justify-center gap-3 my-10">
         <button
-          className={`tab-btn border border-yellow-500 bg-transparent text-yellow-500
-                        hover:border-white hover:text-white 
+          className={`tab-btn border-2 border-[#f9941e]  bg-transparent text-[#f9941e] 
+                        hover:border-[#bc161c] hover:text-white 
        font-bold px-3 py-1 rounded-md  ${activeTab === "Drinks" ? "active" : ""}`}
           onClick={() => setActiveTab("Drinks")}
         >
           Drinks
         </button>
         <button
-          className={`tab-btn border border-yellow-500 bg-transparent text-yellow-500
-                        hover:border-white hover:text-white 
+          className={`tab-btn border-2 border-[#f9941e]  bg-transparent text-[#f9941e] 
+                        hover:border-[#bc161c] hover:text-white 
        font-bold px-3 py-1 rounded-md  ${activeTab === "Meals" ? "active" : ""}`}
           onClick={() => setActiveTab("Meals")}
         >
           Meals
         </button>
         <button
-          className={`tab-btn border border-yellow-500 bg-transparent text-yellow-500
-                        hover:border-white hover:text-white 
+          className={`tab-btn border-2 border-[#f9941e]  bg-transparent text-[#f9941e] 
+                        hover:border-[#bc161c] hover:text-white 
        font-bold px-3 py-1 rounded-md  ${activeTab === "Dessert" ? "active" : ""}`}
           onClick={() => setActiveTab("Dessert")}
         >
           Dessert
         </button>
         <button
-          className={`tab-btn border border-yellow-500 bg-transparent text-yellow-500
-                        hover:border-white hover:text-white 
+          className={`tab-btn border-2 border-[#f9941e]  bg-transparent text-[#f9941e] 
+                        hover:border-[#bc161c] hover:text-white 
        font-bold px-3 py-1 rounded-md  ${activeTab === "Snacks" ? "active" : ""}`}
           onClick={() => setActiveTab("Snacks")}
         >
@@ -149,10 +149,10 @@ const Menu = () => {
                 </div>
                 <div>
                   <div>
-                    <h1 className="text-xl text-yellow-500 font-semibold uppercase mt-5">
+                    <h1 className="text-xl text-[#bc161c] font-semibold uppercase mt-5">
                       {menuItem.foodName}
                     </h1>
-                    <h2 className="text-[#808080] font-semibold">
+                    <h2 className="text-white font-semibold">
                       {menuItem.description}
                     </h2>
                     <div className="lg:flex md:block sm:block justify-between mt-5">
@@ -178,7 +178,7 @@ const Menu = () => {
                             readonly
                           />
                         </div>
-                        <p className="text-yellow-500 text-2xl font-mono font-bold">
+                        <p className="text-[#bc161c] text-2xl font-mono font-bold">
                           ${menuItem.price}
                         </p>
                       </div>
@@ -196,8 +196,8 @@ const Menu = () => {
                         </div> */}
                         <button
                           onClick={() => handleOrderNowClick(menuItem.id)}
-                          className="hover:bg-[#FFD700] hover:text-black
-                             bg-[#FFD700]  text-[#808080] border-black font-bold px-2  py-1 
+                          className="hover:border-[#bc161c] hover:text-white
+                             text-[#f9941e]  border-2 border-[#f9941e]  font-bold px-2  py-1 
                              rounded-md mt-3 flex items-center gap-2"
                         >
                           <span> Add to Cart </span>
@@ -212,7 +212,7 @@ const Menu = () => {
               </div>
             ))}
           </div>
-          <hr className="border-yellow-500 mb-10" />
+          <hr className="border-2-[#f9941e]  mb-10" />
         </div>
       </div>
 

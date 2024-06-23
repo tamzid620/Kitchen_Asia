@@ -42,7 +42,7 @@ const PlatteringService = () => {
   console.log(packages);
 
   return (
-    <div>
+    <div className="bg-black">
       {/* title section */}
       <div
         style={{
@@ -66,6 +66,7 @@ const PlatteringService = () => {
         </div>
       </div>
 
+<main className="pb-10">
       {/* Tab Buttons */}
       <div className="flex justify-center mt-10 gap-5">
         <button
@@ -604,6 +605,7 @@ onClick={() => openModal(packageItem.id)}
           {/* </Slider> */}
         </div>
       )}
+</main>
     </div>
   );
 };

@@ -21,7 +21,7 @@ const Press = () => {
   console.log("press----------", press);
 
   return (
-    <div>
+    <div className="bg-black">
       <div
         style={{
           backgroundImage: `url(${aboutPhoto})`,
@@ -54,7 +54,7 @@ const Press = () => {
                 </div>
               </div>
               <div className="w-[300px] text-center">
-                <h1 className="text-xl font-bold mb-3">{pres.eventName}</h1>
+                <h1 className="text-xl font-bold mb-3 text-[#bc161c]">{pres.eventName}</h1>
                 <p>{pres.description}</p>
               </div>
             </div>

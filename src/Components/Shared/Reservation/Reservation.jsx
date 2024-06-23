@@ -81,7 +81,7 @@ const Reservation = () => {
   }, [showMessage]);
 
   return (
-    <div>
+    <div className="bg-black">
       {/* title section */}
       <div
         style={{
@@ -333,7 +333,7 @@ const Reservation = () => {
           {/* Submit Button */}
           <div className="flex items-center justify-center">
             <button
-              className="bg-yellow-500 text-gray-500 hover:bg-yellow-500 hover:text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="border-2 border-[#f9941e] text-[#f9941e] hover:border-[#bc161c] hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Send

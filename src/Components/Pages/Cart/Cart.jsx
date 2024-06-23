@@ -98,7 +98,8 @@ const Cart = () => {
                 <div className="flex items-center">
                   <button
                     onClick={() => handleDeleteItem(cart.id)}
-                    className="w-[50px] h-[50px] border-2 border-[#bc161c] rounded-full hover:bg-[#bc161c] hover:text-white mr-4 flex justify-center items-center"
+                    className="w-[50px] h-[50px] border-2 border-[#bc161c] rounded-full hover:bg-[#bc161c] hover:text-white mr-4 
+                    flex justify-center items-center"
                   >
                     <MdDeleteForever className="w-[30px] h-[30px]" />
                   </button>

@@ -20,7 +20,7 @@ const OrderTracking = () => {
     }, []);
 
   return (
-    <div>
+    <div className="bg-black">
       {/* title section */}
       <div
         style={{
@@ -44,7 +44,7 @@ const OrderTracking = () => {
         </div>
       </div>
       {/* information section  */}
-      <div className="max-w-screen-xl mx-auto overflow-x-auto text-black">
+      <div className="max-w-screen-xl mx-auto overflow-x-auto text-black py-10">
             <table className="table table-zebra bg-gray-300">
               {/* head */}
               <thead className="bg-gray-600 text-white">
