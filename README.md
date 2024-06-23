@@ -6,5 +6,5 @@
 •
 •
 •
-• hostinger api link: https://restaurantbackend.softplatoon.com/
-• localexpose api link: https://backend.ap.loclx.io/
+• hostinger api link: https://restaurantbackend.softplatoon.com/api/
+• localexpose api link: https://backend.ap.loclx.io/api/
