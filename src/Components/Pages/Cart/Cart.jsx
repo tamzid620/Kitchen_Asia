@@ -46,7 +46,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="">
+    <div className="bg-black">
       {/* title section */}
       <div
         style={{
@@ -56,7 +56,7 @@ const Cart = () => {
           height: "350px",
           // marginTop:'30px'
         }}
-        className="flex justify-center"
+        className="flex justify-center "
       >
         {/* title tag */}
         <div className="bg-black opacity-70 w-full h-full flex flex-col justify-center items-center">
@@ -71,13 +71,13 @@ const Cart = () => {
       </div>
 
       {/* information section */}
-      <div className="max-w-screen-xl mx-auto flex justify-center mt-20" >
+      <div className="max-w-screen-xl mx-auto flex justify-center mt-20 " >
         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-10">
           {/* selected items */}
           {carts.map((cart) => (
             <div
               key={cart.id}
-              className="border-t-2 border-yellow-500 shadow-lg shadow-yellow-500 rounded-xl lg:w-[500px] md:w-[500px] sm:w-[358px] text-yellow-500 bg-overflow-y-auto flex carts-center mb-5"
+              className="bg-white border-t-2 border-[#bc161c] shadow-lg shadow-[#bc161c] rounded-xl lg:w-[500px] md:w-[500px] sm:w-[358px] text-[#bc161c] bg-overflow-y-auto flex carts-center mb-5"
             >
               <img
                 className="rounded-xl lg:w-[150px] md:w-[150px] sm:w-[100px] me-5 ms-2"
@@ -86,10 +86,10 @@ const Cart = () => {
               />
               <div className="item flex justify-between items-center w-full">
                 <div className="-mt-5 flex-grow">
-                  <h1 className="text-md text-yellow-500 font-semibold uppercase mt-5">
+                  <h1 className="text-md text-[#bc161c] font-semibold uppercase mt-5">
                     {cart.foodName}
                   </h1>
-                  <h2 className="text-[#808080] font-semibold">
+                  <h2 className="text-black font-semibold">
                     Price: <span>${cart.price}</span>
                   </h2>
                   {/* Add more details as needed */}
@@ -98,7 +98,7 @@ const Cart = () => {
                 <div className="flex items-center">
                   <button
                     onClick={() => handleDeleteItem(cart.id)}
-                    className="w-[50px] h-[50px] border border-yellow-500 rounded-full hover:bg-yellow-500 hover:text-black mr-4 flex justify-center items-center"
+                    className="w-[50px] h-[50px] border-2 border-[#bc161c] rounded-full hover:bg-[#bc161c] hover:text-white mr-4 flex justify-center items-center"
                   >
                     <MdDeleteForever className="w-[30px] h-[30px]" />
                   </button>
@@ -112,9 +112,9 @@ const Cart = () => {
 {/* modal section  */}
 <div className="flex justify-center mt-5">
 <button 
-className="border border-yellow-500 bg-transparent text-yellow-500
-hover:border-white hover:text-white 
-font-bold px-3 py-1 rounded-md "
+className="border-2 border-yellow-500 bg-transparent text-yellow-500
+hover:border-[#bc161c] hover:text-white 
+font-bold px-3 py-1 rounded-md mb-20"
 onClick={()=>document.getElementById('my_modal_3').showModal()}>Order Now</button>
 <dialog id="my_modal_3" className="modal">
   <div className="modal-box w-11/12 max-w-5xl bg-slate-900 border border-yellow-500 shadow-lg shadow-yellow-500">

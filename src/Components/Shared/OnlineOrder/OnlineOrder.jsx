@@ -11,7 +11,7 @@ import Rating from "react-rating";
 // import bgBanner2 from "../../../../public/images/bg-Banner-5.jpeg";
 import Swal from "sweetalert2";
 import RatingModal from "../RatingModal/RatingModal";
-import hr from '../../../../public/icons/hr.png' ;
+import hr from "../../../../public/icons/hr.png";
 
 const OnlineOrder = () => {
   Aos.init();
@@ -57,7 +57,7 @@ const OnlineOrder = () => {
   };
 
   const handleLikeClick = () => {
-    setModalOpen(true) ; 
+    setModalOpen(true);
   };
   const closeModal = () => {
     setModalOpen(false);
@@ -72,7 +72,7 @@ const OnlineOrder = () => {
       // }}
       className="relative bg-transparent"
     >
-        <div className="absolute inset-0 bg-black opacity-60" />
+      <div className="absolute inset-0 bg-black opacity-60" />
       {/* title section  */}
       <div className=" flex justify-center Pt-16 pt-10 ">
         <div
@@ -102,7 +102,9 @@ const OnlineOrder = () => {
               <div
                 key={onlineOrder.id}
                 data-aos="flip-up"
-                className={`bg-gray-900 rounded-xl border-t-2 border-[#f9941e] shadow-md shadow-[#f9941e] p-3 w-[280px] transition-transform transform hover:scale-105`}
+                className={`bg-white rounded-xl border-t-2 border-[#bc161c] 
+                  shadow-md shadow-[#bc161c] p-3 w-[280px] 
+                  transition-transform transform hover:scale-105`}
               >
                 <div>
                   <img
@@ -114,24 +116,27 @@ const OnlineOrder = () => {
                     {/* food name,description and like logo  */}
                     <h1 className="flex justify-between items-center">
                       <h2>
-                        <h3 style={{fontFamily:"Montserrat, sans-serif "}} className=" text-xl text-white font-semibold uppercase mt-5">
+                        <h3
+                          style={{ fontFamily: "Montserrat, sans-serif " }}
+                          className=" text-xl text-[#bc161c] font-semibold uppercase mt-5"
+                        >
                           {onlineOrder.foodName}
                         </h3>
-                        <h3 className="text-[#808080] font-semibold">
+                        <h3 className="text-black font-semibold">
                           {onlineOrder.description}
                         </h3>
                       </h2>
                       <h1
-                      onClick={() => handleLikeClick(onlineOrder.id)}
-                        className="text-white hover:text-[#f9941e]
-                     border border-white hover:border-[#f9941e] rounded-full"
+                        onClick={() => handleLikeClick(onlineOrder.id)}
+                        className="text-[#bc161c] hover:text-[#f9941e]
+                     border border-[#bc161c] hover:border-[#f9941e] rounded-full"
                       >
                         <BiSolidLike size={25} className="p-1" />
                       </h1>
                     </h1>
                     {/* price and rating  */}
                     <div className="flex justify-between items-center mt-5">
-                      <div className="flex text-[#f9941e] text-xl font-mono font-bold">
+                      <div className="flex text-[#bc161c] text-xl font-mono font-bold">
                         <span>{onlineOrder.price}</span> <span>৳</span>
                       </div>
                       {/* react rating section  */}
@@ -156,9 +161,11 @@ const OnlineOrder = () => {
                     <button
                       title="Add to Cart"
                       onClick={() => handleOrderNowClick(onlineOrder.id)}
-                      className=" flex items-center gap-2 border border-white bg-transparent text-white
-             hover:border-[#f9941e] hover:text-[#f9941e] 
-font-bold px-3 py-3 mt-3 rounded-md "
+                      className=" flex items-center gap-2
+                       border-2 border-[#bc161c] bg-transparent
+                        text-[#bc161c]
+                      hover:border-[#f9941e] hover:bg-[#bc161c] hover:text-white 
+                    font-bold px-3 py-3 mt-3 rounded-md "
                     >
                       <span> Add to Cart </span>
                       <span>
@@ -185,7 +192,7 @@ font-bold px-3 py-3 mt-3 rounded-md "
         pauseOnHover
         theme="dark"
       />
-       {modalOpen && <RatingModal closeModal={closeModal} />}
+      {modalOpen && <RatingModal closeModal={closeModal} />}
     </div>
   );
 };

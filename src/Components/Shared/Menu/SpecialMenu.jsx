@@ -286,8 +286,9 @@ const SpecialMenu = () => {
         <div className="flex justify-center">
           <button
             onClick={handleWishlist}
-            className="flex items-center border border-[#f9941e] bg-transparent text-[#f9941e]
-             hover:border-white hover:text-white 
+            className="flex items-center border-2
+             border-[#f9941e] bg-transparent text-[#f9941e]
+             hover:border-[#bc161c] hover:text-white 
 font-bold px-3 py-1  mt-3 rounded-md "
           >
             Add to Wishlist{" "}

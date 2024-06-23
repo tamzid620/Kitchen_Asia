@@ -341,13 +341,13 @@ font-bold px-3 py-1 rounded-md "
                       ></textarea>
                     </div>
 
-                    <div className="flex justify-center ">
+                    <div className="flex justify-center">
                       <button
                         type="submit"
                         onClick={(e) => createOrder(e)}
                         className="
-                        border border-yellow-500 bg-transparent text-yellow-500
-                        hover:border-white hover:text-white 
+                        border-2 border-yellow-500 bg-transparent text-yellow-500
+                        hover:border-[#bc161c] hover:text-white  
        font-bold px-3 py-1 rounded-md "
                       >
                         Create Order
