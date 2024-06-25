@@ -44,7 +44,7 @@ const AdminDeliveryManAdd = () => {
       //   };
       //   setLoading(true)
       //   axios
-      //     .get(`https://restaurantbackend.softplatoon.com/api/login`, {
+      //     .get(`https://backend.ap.loclx.io/api/login`, {
       //       headers: headers,
       //     })
       //     .then((res) => {
@@ -74,7 +74,7 @@ const AdminDeliveryManAdd = () => {
       console.log(data);
       // post method --------------
       axios
-        .post("https://restaurantbackend.softplatoon.com/api/add-delivery-man", data, {
+        .post("https://backend.ap.loclx.io/api/add-delivery-man", data, {
           headers: headers,
         })
         .then((res) => {

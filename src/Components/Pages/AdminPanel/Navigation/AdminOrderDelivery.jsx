@@ -15,7 +15,7 @@ const AdminOrderDelivery = () => {
     };
     setLoading(true);
     axios
-      .get("https://restaurantbackend.softplatoon.com/api/order-delivery-list", {
+      .get("https://backend.ap.loclx.io/api/order-delivery-list", {
         headers: headers,
       })
       .then((res) => {

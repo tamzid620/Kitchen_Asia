@@ -17,7 +17,7 @@ const UserOrderDetails = () => {
   useEffect(() => {
     // get method -------------------
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/user-order-detail/${orderId}`)
+      .get(`https://backend.ap.loclx.io/api/user-order-detail/${orderId}`)
       .then((res) => {
         if (res.data.status === "401") {
           Swal.fire({
@@ -39,7 +39,7 @@ const UserOrderDetails = () => {
 
     // delivery man info get api -----------------
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/delivery-man-info/${orderId}`)
+      .get(`https://backend.ap.loclx.io/api/delivery-man-info/${orderId}`)
       .then((res) => {
         setDeliveryManInfo(res.data);
       })

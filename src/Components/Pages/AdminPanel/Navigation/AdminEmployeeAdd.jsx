@@ -61,7 +61,7 @@ const AdminEmployeeAdd = () => {
 // post  data ---------------
 setLoading(true)
       axios
-        .post("https://restaurantbackend.softplatoon.com/api/add-employee", bodyFormData, {
+        .post("https://backend.ap.loclx.io/api/add-employee", bodyFormData, {
           headers: headers,
         })
         .then((res) => {

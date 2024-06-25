@@ -43,7 +43,7 @@ function AdminLogin() {
     e.preventDefault();
     console.log("Email:", email, "Password:", password);
 
-    axios.post(`https://restaurantbackend.softplatoon.com/api/login`, data).then((res) => {
+    axios.post(`https://backend.ap.loclx.io/api/login`, data).then((res) => {
       if (res.data.status === "201") {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data));

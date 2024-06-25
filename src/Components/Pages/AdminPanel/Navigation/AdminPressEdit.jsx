@@ -38,7 +38,7 @@ const AdminPressEdit = () => {
         
         // get  method ----------------------
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/press-edit/${pressId}`, {
+      .get(`https://backend.ap.loclx.io/api/press-edit/${pressId}`, {
         headers: headers,
       })
       .then((res) => {
@@ -86,7 +86,7 @@ const AdminPressEdit = () => {
 // post  data ---------------
 setLoading(true)
       axios
-        .post("https://restaurantbackend.softplatoon.com/api/press-update", bodyFormData, {
+        .post("https://backend.ap.loclx.io/api/press-update", bodyFormData, {
           headers: headers,
         })
         .then((res) => {

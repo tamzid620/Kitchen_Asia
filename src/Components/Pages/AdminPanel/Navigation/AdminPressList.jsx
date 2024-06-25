@@ -33,7 +33,7 @@ const AdminPressList = () => {
       // get foodItem data ----------
       setLoading(true);
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/press-list`, {
+        .get(`https://backend.ap.loclx.io/api/press-list`, {
           headers: headers,
         })
         .then((res) => {
@@ -55,7 +55,7 @@ const AdminPressList = () => {
     };
 
     axios
-      .delete(`https://restaurantbackend.softplatoon.com/api/press-delete/${pressId}`, {
+      .delete(`https://backend.ap.loclx.io/api/press-delete/${pressId}`, {
         headers: headers,
       })
       .then((res) => {

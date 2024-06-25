@@ -10,7 +10,7 @@ const OrderTracking = () => {
     useEffect(() => {
         // get foodItem data ---------------
         axios
-          .get(`https://restaurantbackend.softplatoon.com/api/user-order-list`)
+          .get(`https://backend.ap.loclx.io/api/user-order-list`)
           .then((res) => {
             setOrderList(res.data.orders);
           })

@@ -34,7 +34,7 @@ const AdminDeliveryManList = () => {
       // get foodItem data ---------------
       setLoading(true);
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/delivery-man-list`, {
+        .get(`https://backend.ap.loclx.io/api/delivery-man-list`, {
           headers: headers,
         })
         .then((res) => {
@@ -58,7 +58,7 @@ const AdminDeliveryManList = () => {
 
     axios
       .delete(
-        `https://restaurantbackend.softplatoon.com/api/delivery-man-delete/${deliveryManId}`,
+        `https://backend.ap.loclx.io/api/delivery-man-delete/${deliveryManId}`,
         {
           headers: headers,
         }
@@ -98,7 +98,7 @@ const AdminDeliveryManList = () => {
 
     axios
       .get(
-        `https://restaurantbackend.softplatoon.com/api/close-delivery-panel/${deliveryManId}`,
+        `https://backend.ap.loclx.io/api/close-delivery-panel/${deliveryManId}`,
         {
           headers: headers,
         }

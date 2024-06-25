@@ -21,7 +21,7 @@ const Menu = () => {
     // get method --------------------
     setIsLoading(true) ; 
     axios
-      .get("https://restaurantbackend.softplatoon.com/api/food-item-list")
+      .get("https://backend.ap.loclx.io/api/food-item-list")
       
       .then((res) => {
         setMenus(res.data.foodItem);
@@ -45,7 +45,7 @@ const Menu = () => {
     // post method --------------
     setIsLoading(true) ; 
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/add-to-cart/${id}`)
+      .get(`https://backend.ap.loclx.io/api/add-to-cart/${id}`)
 
       .then((res) => {
         // to refresh to form ---------------

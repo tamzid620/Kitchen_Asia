@@ -17,10 +17,11 @@ const OnlineOrder = () => {
   Aos.init();
   const [onlineOrders, setOnlineOrders] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedOrderId, setSelectedOrderId] = useState(null);
 
   useEffect(() => {
     axios
-      .get("https://restaurantbackend.softplatoon.com/api/food-item-list")
+      .get("https://backend.ap.loclx.io/api/food-item-list")
       .then((res) => {
         setOnlineOrders(res.data.foodItem);
       })
@@ -31,7 +32,7 @@ const OnlineOrder = () => {
 
   const handleOrderNowClick = (id) => {
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/add-to-cart/${id}`)
+      .get(`https://backend.ap.loclx.io/api/add-to-cart/${id}`)
 
       .then((res) => {
         toast.success("Item added to Cart!", {
@@ -56,11 +57,13 @@ const OnlineOrder = () => {
       });
   };
 
-  const handleLikeClick = () => {
+  const handleLikeClick = (id) => {
     setModalOpen(true);
+    setSelectedOrderId(id);
   };
   const closeModal = () => {
     setModalOpen(false);
+    setSelectedOrderId(null);
   };
 
   return (
@@ -123,13 +126,18 @@ const OnlineOrder = () => {
                           {onlineOrder.foodName}
                         </h3>
                         <h3 className="text-black font-semibold">
+                          {onlineOrder.id}
+                        </h3>
+                        <h3 className="text-black font-semibold">
                           {onlineOrder.description}
                         </h3>
                       </h2>
+                      {/* ------------review thumbsup option ----------- */}
                       <h1
+                      title="review now"
                         onClick={() => handleLikeClick(onlineOrder.id)}
-                        className="text-[#bc161c] hover:text-[#f9941e]
-                     border border-[#bc161c] hover:border-[#f9941e] rounded-full"
+                        className="text-[#bc161c] hover:text-white hover:bg-[#bc161c]
+                     border-2 border-[#bc161c] hover:border-[#f9941e] rounded-full"
                       >
                         <BiSolidLike size={25} className="p-1" />
                       </h1>
@@ -141,18 +149,10 @@ const OnlineOrder = () => {
                       </div>
                       {/* react rating section  */}
                       <div>
-                        <Rating
-                          initialRating={onlineOrder.rating}
-                          emptySymbol={
-                            <img
-                              src={icon2}
-                              alt="empty star"
-                              className="icon"
-                            />
-                          }
-                          fullSymbol={
-                            <img src={icon1} alt="full star" className="icon" />
-                          }
+                      <Rating
+                          initialRating={parseFloat(onlineOrder.review)}
+                          emptySymbol={<img src={icon2} alt="empty star" className="icon" />}
+                          fullSymbol={<img src={icon1} alt="full star" className="icon" />}
                           fractions={2}
                           readonly
                         />
@@ -192,7 +192,7 @@ const OnlineOrder = () => {
         pauseOnHover
         theme="dark"
       />
-      {modalOpen && <RatingModal closeModal={closeModal} />}
+      {modalOpen && <RatingModal closeModal={closeModal} id={selectedOrderId} />}
     </div>
   );
 };

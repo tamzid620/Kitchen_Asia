@@ -33,7 +33,7 @@ const AdminCategory = () => {
       // get category data ---------------
       setLoading(true)
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/category-list`, {
+        .get(`https://backend.ap.loclx.io/api/category-list`, {
           headers: headers,
         })
         .then((res) => {
@@ -56,7 +56,7 @@ const AdminCategory = () => {
       Authorization: "Bearer " + user.token,
     };
     axios
-      .delete(`https://restaurantbackend.softplatoon.com/api/category-delete/${categoryId}`, {
+      .delete(`https://backend.ap.loclx.io/api/category-delete/${categoryId}`, {
         headers: headers,
       })
       .then(() => {

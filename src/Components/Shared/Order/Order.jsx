@@ -22,7 +22,7 @@ const Order = () => {
   // get data from json -------------------------
   useEffect(() => {
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/cart-item`)
+      .get(`https://backend.ap.loclx.io/api/cart-item`)
       .then((res) => res.data)
       .then((data) => {
         setFormData((prevFormData) => ({
@@ -40,7 +40,7 @@ const Order = () => {
         // Fetch and update food details for each food item
         data.foodCart.forEach((cartItem, index) => {
           axios
-            .get(`https://restaurantbackend.softplatoon.com/api/cart-item/${cartItem.id}`)
+            .get(`https://backend.ap.loclx.io/api/cart-item/${cartItem.id}`)
             .then((res) => res.data)
             .then((foodDetails) => {
               setFormData((prevFormData) => ({
@@ -154,7 +154,7 @@ const Order = () => {
     console.log("Form submitted:", formDataWithTotal);
 
     axios
-      .post(`https://restaurantbackend.softplatoon.com/api/add-order`, formDataWithTotal)
+      .post(`https://backend.ap.loclx.io/api/add-order`, formDataWithTotal)
       .then((res) => {
         console.log("Order submitted successfully:", res.data);
         toast.success(res.data.message, {

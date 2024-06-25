@@ -65,7 +65,7 @@ const OrderPackage = ({ packageId }) => {
   // get data ----------------------
   useEffect(() => {
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/package-item/${packageId}`)
+      .get(`https://backend.ap.loclx.io/api/package-item/${packageId}`)
       .then((res) => {
         setPackages(res.data.package);
       })
@@ -97,7 +97,7 @@ const OrderPackage = ({ packageId }) => {
 
     // Post Data ----------------------
     axios
-      .post("https://restaurantbackend.softplatoon.com/api/add-order", postData)
+      .post("https://backend.ap.loclx.io/api/add-order", postData)
       .then((res) => {
         console.log("Order submitted successfully:", res.data);
         toast.success("Order submitted successfully");

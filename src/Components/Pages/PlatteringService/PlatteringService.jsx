@@ -31,7 +31,7 @@ const PlatteringService = () => {
   useEffect(() => {
     // get packageItem data ---------------
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/package-list`)
+      .get(`https://backend.ap.loclx.io/api/package-list`)
       .then((res) => {
         setPackages(res.data.packages);
       })

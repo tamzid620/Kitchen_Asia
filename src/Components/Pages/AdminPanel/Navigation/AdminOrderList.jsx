@@ -33,7 +33,7 @@ const AdminOrderList = () => {
       // get orderItem data ---------------
       setLoading(true);
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/order-list`, {
+        .get(`https://backend.ap.loclx.io/api/order-list`, {
           headers: headers,
         })
         .then((res) => {

@@ -31,7 +31,7 @@ const Reservation = () => {
 
     // post method ---------------------
     axios
-      .post("https://restaurantbackend.softplatoon.com/api/add-reservation", formData)
+      .post("https://backend.ap.loclx.io/api/add-reservation", formData)
       .then((res) => {
         console.log("Response from the server:", res.data);
         Swal.fire({
@@ -69,7 +69,7 @@ const Reservation = () => {
   useEffect(() => {
     // get method -------------------
     axios
-      .get("https://restaurantbackend.softplatoon.com/api/user-reservation-info")
+      .get("https://backend.ap.loclx.io/api/user-reservation-info")
       .then((res) => {
         setShowMessage(res.data);
       })

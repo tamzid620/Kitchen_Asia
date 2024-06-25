@@ -40,7 +40,7 @@ const { employeeId } = useParams();
         
         // get  method ----------------------
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/employee-edit/${employeeId}`, {
+      .get(`https://backend.ap.loclx.io/api/employee-edit/${employeeId}`, {
         headers: headers,
       })
       .then((res) => {
@@ -96,7 +96,7 @@ const { employeeId } = useParams();
 // post  data ---------------
 setLoading(true)
       axios
-        .post("https://restaurantbackend.softplatoon.com/api/employee-update", bodyFormData, {
+        .post("https://backend.ap.loclx.io/api/employee-update", bodyFormData, {
           headers: headers,
         })
         .then((res) => {

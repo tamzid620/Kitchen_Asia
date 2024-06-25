@@ -31,7 +31,7 @@ const AdminReservationApprovedList = () => {
       // get reserveItem data ---------------
       setLoading(true);
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/approved-reservation-list`, {
+        .get(`https://backend.ap.loclx.io/api/approved-reservation-list`, {
           headers: headers,
         })
         .then((res) => {
@@ -52,7 +52,7 @@ const AdminReservationApprovedList = () => {
           Authorization: "Bearer " + user.token,
         };
         axios
-          .get(`https://restaurantbackend.softplatoon.com/api/reservation-decline/${reserveId}`, {
+          .get(`https://backend.ap.loclx.io/api/reservation-decline/${reserveId}`, {
             headers: headers,
           })
           .then((res) => {

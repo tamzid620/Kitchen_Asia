@@ -27,7 +27,7 @@ const EventList = () => {
       };
       // get reserveItem data ---------------
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/reservation-list`, {
+        .get(`https://backend.ap.loclx.io/api/reservation-list`, {
           headers: headers,
         })
         .then((res) => {

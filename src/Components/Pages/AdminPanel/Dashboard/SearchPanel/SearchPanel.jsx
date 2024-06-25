@@ -29,7 +29,7 @@ const logoutSubmit = (e) => {
     Authorization: "Bearer " + user.token,
   };
   axios
-    .post(`https://restaurantbackend.softplatoon.com/api/admin-logout`, null, {
+    .post(`https://backend.ap.loclx.io/api/admin-logout`, null, {
       headers: headers,
     })
     .then((res) => {

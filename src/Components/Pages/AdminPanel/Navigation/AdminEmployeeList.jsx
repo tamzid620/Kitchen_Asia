@@ -33,7 +33,7 @@ const AdminEmployeeList = () => {
       // get foodItem data ---------------
       setLoading(true);
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/employee-list`, {
+        .get(`https://backend.ap.loclx.io/api/employee-list`, {
           headers: headers,
         })
         .then((res) => {
@@ -54,7 +54,7 @@ const AdminEmployeeList = () => {
     };
 
     axios
-      .delete(`https://restaurantbackend.softplatoon.com/api/employee-delete/${employeeId}`, {
+      .delete(`https://backend.ap.loclx.io/api/employee-delete/${employeeId}`, {
         headers: headers,
       })
       .then((res) => {

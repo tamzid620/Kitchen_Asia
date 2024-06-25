@@ -1,53 +1,50 @@
+import axios from "axios";
 import { useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
-const RatingModal = ({ closeModal }) => {
-  const [rating, setRating] = useState(0);
+const RatingModal = ({ closeModal, id }) => {
+  const [review, setReview] = useState(0);
 
-  const ratingChanged = (newRating) => {
-    setRating(newRating);
-    console.log(newRating);
+  const reviewChanged = (newReview) => {
+    setReview(newReview);
   };
 
   const handleSubmit = async () => {
-    try {
-      // Replace the URL with your server's endpoint
-      const res = await fetch(
-        "https://restaurantbackend.softplatoon.com/api/ratings",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ rating }),
+    axios
+      .post("https://backend.ap.loclx.io/api/add-review", {
+        review,
+        id,
+      })
+      .then((res) => {
+        if (res.data.status === "201") {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: res.data.message,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        } else {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: res.data.message,
+            showConfirmButton: true,
+          });
         }
-      );
-
-      if (res.ok) {
-        console.log("Rating submitted successfully!");
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Rating submitted successfully!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
         closeModal();
-      } else {
+      })
+      .catch((error) => {
         Swal.fire({
           position: "center",
           icon: "error",
           title: "Error deleting Teacher",
-          text: "Failed to submit rating",
+          text: error.message,
           showConfirmButton: true,
         });
-        console.error("Failed to submit rating");
-      }
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
+      });
   };
 
   return (
@@ -59,14 +56,20 @@ const RatingModal = ({ closeModal }) => {
         >
           Order Review
         </h1>
+        {/* hidden input field ----- */}
+        <div className="flex justify-center">
+          <input className="text-black" name="id" value={id} />
+        </div>
 
+        {/* --------------review option -------------- */}
         <div className="flex justify-center mb-4">
           <ReactStars
+            name="review"
             count={5}
-            onChange={ratingChanged}
+            onChange={reviewChanged}
             size={40}
             activeColor="#f9941e"
-            value={rating}
+            value={review}
           />
         </div>
         <div className="flex justify-center gap-2 mt-10">

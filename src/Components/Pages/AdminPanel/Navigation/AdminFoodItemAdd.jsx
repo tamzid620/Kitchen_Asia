@@ -79,7 +79,7 @@ const AdminFoodItemAdd = () => {
       //get dropdown list method ---------------
       setLoading(true)
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/get-dropdown`, {
+        .get(`https://backend.ap.loclx.io/api/get-dropdown`, {
           headers: headers,
         })
         .then((res) => {
@@ -119,7 +119,7 @@ const AdminFoodItemAdd = () => {
     console.log(data);
     // post method --------------
     axios
-      .post("https://restaurantbackend.softplatoon.com/api/add-food-item", data, {
+      .post("https://backend.ap.loclx.io/api/add-food-item", data, {
         headers: headers,
       })
       .then((res) => {

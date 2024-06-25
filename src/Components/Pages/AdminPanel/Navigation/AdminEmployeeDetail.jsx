@@ -19,7 +19,7 @@ const AdminEmployeeDetail = () => {
     // get method -------------------
     setLoading(true);
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/employee-detail/${employeeId}`, {
+      .get(`https://backend.ap.loclx.io/api/employee-detail/${employeeId}`, {
         headers: headers,
       })
       .then((res) => {

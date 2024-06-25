@@ -54,7 +54,7 @@ const AdminPressAdd = () => {
       // post  data ---------------
       setLoading(true);
       axios
-        .post("https://restaurantbackend.softplatoon.com/api/add-press", bodyFormData, {
+        .post("https://backend.ap.loclx.io/api/add-press", bodyFormData, {
           headers: headers,
         })
         .then((res) => {

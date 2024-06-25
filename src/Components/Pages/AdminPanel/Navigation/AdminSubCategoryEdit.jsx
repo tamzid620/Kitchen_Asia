@@ -46,7 +46,7 @@ const AdminSubCategoryEdit = () => {
     setLoading(true)
     axios
       .get(
-        `https://restaurantbackend.softplatoon.com/api/sub-category-edit/${subCategoryId}`,
+        `https://backend.ap.loclx.io/api/sub-category-edit/${subCategoryId}`,
         {
           headers: headers,
         }
@@ -65,7 +65,7 @@ const AdminSubCategoryEdit = () => {
       });
 
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/category-list`, {
+      .get(`https://backend.ap.loclx.io/api/category-list`, {
         headers: headers,
       })
       .then((res) => {
@@ -94,7 +94,7 @@ const AdminSubCategoryEdit = () => {
     console.log(data);
     // post method --------------
     axios
-      .post("https://restaurantbackend.softplatoon.com/api/sub-category-update", data, {
+      .post("https://backend.ap.loclx.io/api/sub-category-update", data, {
         headers: headers,
       })
       .then((res) => {

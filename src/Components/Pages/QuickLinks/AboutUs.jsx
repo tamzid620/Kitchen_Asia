@@ -8,7 +8,7 @@ const AboutUs = () => {
 
   useEffect(() => {
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/employee-list`)
+      .get(`https://backend.ap.loclx.io/api/employee-list`)
       .then((res) => {
         setAboutUs(res.data.employee);
       })

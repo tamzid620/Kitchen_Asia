@@ -20,7 +20,7 @@ const AdminOrderDetails = () => {
     // get method -------------------
     setLoading(true)
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/order-detail/${orderId}`, {
+      .get(`https://backend.ap.loclx.io/api/order-detail/${orderId}`, {
         headers: headers,
       })
       .then((res) => {

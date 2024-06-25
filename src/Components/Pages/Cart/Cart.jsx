@@ -10,7 +10,7 @@ const Cart = () => {
 
   useEffect(() => {
     axios
-      .get("https://restaurantbackend.softplatoon.com/api/cart-item")
+      .get("https://backend.ap.loclx.io/api/cart-item")
       .then((res) => res.data.foodCart)
       .then((data) => setCarts(data));
   }, []);
@@ -21,7 +21,7 @@ const Cart = () => {
     console.log("Deleting cart with ID:", cartId);
 
     axios
-      .delete(`https://restaurantbackend.softplatoon.com/api/food-cart-delete/${cartId}`)
+      .delete(`https://backend.ap.loclx.io/api/food-cart-delete/${cartId}`)
 
       .then((res) => {
         setCarts((prevCarts) => prevCarts.filter((cart) => cart.id !== cartId));
@@ -42,7 +42,6 @@ const Cart = () => {
           showConfirmButton: true,
         });
       });
-    console.log(cartId);
   };
 
   return (

@@ -38,7 +38,7 @@ const AdminOrderProcessing = () => {
     // get method -------------------
     setLoading(true);
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/order-detail/${orderId}`, {
+      .get(`https://backend.ap.loclx.io/api/order-detail/${orderId}`, {
         headers: headers,
       })
       .then((res) => {
@@ -50,7 +50,7 @@ const AdminOrderProcessing = () => {
       });
 
     axios
-      .get("https://restaurantbackend.softplatoon.com/api/delivery-panel-list", {
+      .get("https://backend.ap.loclx.io/api/delivery-panel-list", {
         headers: headers,
       })
       .then((res) => {
@@ -72,7 +72,7 @@ const AdminOrderProcessing = () => {
       Authorization: "Bearer " + user.token,
     };
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/order-stage-approve/${orderId}`, {
+      .get(`https://backend.ap.loclx.io/api/order-stage-approve/${orderId}`, {
         headers: headers,
       })
       .then((res) => {
@@ -105,7 +105,7 @@ const AdminOrderProcessing = () => {
       Authorization: "Bearer " + user.token,
     };
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/order-stage-way/${orderId}`, {
+      .get(`https://backend.ap.loclx.io/api/order-stage-way/${orderId}`, {
         headers: headers,
       })
       .then((res) => {
@@ -145,7 +145,7 @@ const AdminOrderProcessing = () => {
     console.log(data);
     // post method --------------
     axios
-      .post("https://restaurantbackend.softplatoon.com/api/assign-order", data, {
+      .post("https://backend.ap.loclx.io/api/assign-order", data, {
         headers: headers,
       })
       .then((res) => {

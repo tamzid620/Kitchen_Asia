@@ -31,7 +31,7 @@ useEffect(() => {
     // get orderItem data ---------------
     setLoading(true);
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/admin-graph-first`, {
+      .get(`https://backend.ap.loclx.io/api/admin-graph-first`, {
         headers: headers,
       })
       .then((res) => {

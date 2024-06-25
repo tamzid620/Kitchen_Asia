@@ -33,7 +33,7 @@ const AdminPackageList = () => {
       // get packageItem data ---------------
       setLoading(true);
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/package-list`, {
+        .get(`https://backend.ap.loclx.io/api/package-list`, {
           headers: headers,
         })
         .then((res) => {
@@ -56,7 +56,7 @@ const AdminPackageList = () => {
     };
 
     axios
-      .delete(`https://restaurantbackend.softplatoon.com/api/package-delete/${packageId}`, {
+      .delete(`https://backend.ap.loclx.io/api/package-delete/${packageId}`, {
         headers: headers,
       })
       .then((res) => {

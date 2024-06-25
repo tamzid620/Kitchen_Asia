@@ -66,7 +66,7 @@ const AdminPackageEdit = () => {
       //get dropdown list method ---------------
       setLoading(true)
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/get-dropdown-food-item`, {
+        .get(`https://backend.ap.loclx.io/api/get-dropdown-food-item`, {
           headers: headers,
         })
         .then((res) => {
@@ -79,7 +79,7 @@ const AdminPackageEdit = () => {
         
         // Fetch data using axios
         axios
-          .get(`https://restaurantbackend.softplatoon.com/api/package-edit/${packageId}`, {
+          .get(`https://backend.ap.loclx.io/api/package-edit/${packageId}`, {
             headers: headers,
           })
           .then((res) => {
@@ -118,7 +118,7 @@ const AdminPackageEdit = () => {
     console.log(data);
     // post method --------------
     axios
-      .post("https://restaurantbackend.softplatoon.com/api/package-update", data, {
+      .post("https://backend.ap.loclx.io/api/package-update", data, {
         headers: headers,
       })
       .then((res) => {

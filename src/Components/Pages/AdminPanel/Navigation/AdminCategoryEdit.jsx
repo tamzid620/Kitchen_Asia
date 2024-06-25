@@ -40,7 +40,7 @@ const AdminCategoryEdit = () => {
     };
     setLoading(true);
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/category-edit/${categoryId}`, {
+      .get(`https://backend.ap.loclx.io/api/category-edit/${categoryId}`, {
         headers: headers,
       })
       .then((response) => {
@@ -73,7 +73,7 @@ const AdminCategoryEdit = () => {
     console.log(data);
     // post method --------------
     axios
-      .post("https://restaurantbackend.softplatoon.com/api/category-update", data, {
+      .post("https://backend.ap.loclx.io/api/category-update", data, {
         headers: headers,
       })
       .then((res) => {

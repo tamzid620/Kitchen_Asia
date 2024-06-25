@@ -19,7 +19,7 @@ const DeliveryAssignList = () => {
     };
     setLoading(true);
     axios
-      .get("https://restaurantbackend.softplatoon.com/api/order-assign-list", {
+      .get("https://backend.ap.loclx.io/api/order-assign-list", {
         headers: headers,
       })
       .then((res) => {
@@ -39,7 +39,7 @@ const DeliveryAssignList = () => {
       Authorization: "Bearer " + user.token,
     };
     axios
-      .get(`https://restaurantbackend.softplatoon.com/api/order-stage-delivered/${assignId}`, {
+      .get(`https://backend.ap.loclx.io/api/order-stage-delivered/${assignId}`, {
         headers: headers,
       })
       .then((res) => {
@@ -75,7 +75,7 @@ const logoutSubmit = (e) => {
     Authorization: "Bearer " + user.token,
   };
   axios
-    .post(`https://restaurantbackend.softplatoon.com/api/admin-logout`, null, {
+    .post(`https://backend.ap.loclx.io/api/admin-logout`, null, {
       headers: headers,
     })
     .then((res) => {

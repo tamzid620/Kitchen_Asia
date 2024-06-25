@@ -25,7 +25,7 @@ const PaymentStatus1 = () => {
       };
       // get orderItem data ---------------
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/order-list/api/order-list`, {
+        .get(`https://backend.ap.loclx.io/api/order-list/api/order-list`, {
           headers: headers,
         })
         .then((res) => {

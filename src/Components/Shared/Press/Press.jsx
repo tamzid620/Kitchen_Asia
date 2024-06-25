@@ -10,7 +10,7 @@ const Press = () => {
   useEffect(() => {
     // get method --------------------
     axios
-      .get("https://restaurantbackend.softplatoon.com/api/press-list")
+      .get("https://backend.ap.loclx.io/api/press-list")
       .then((res) => {
         setPress(res.data.press);
       })

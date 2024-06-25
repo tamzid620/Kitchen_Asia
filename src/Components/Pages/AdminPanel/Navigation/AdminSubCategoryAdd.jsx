@@ -49,7 +49,7 @@ const AdminSubCategoryAdd = () => {
 
       setLoading(true)
       axios
-        .get(`https://restaurantbackend.softplatoon.com/api/category-list`, {
+        .get(`https://backend.ap.loclx.io/api/category-list`, {
           headers: headers,
         })
         .then((res) => {
@@ -81,7 +81,7 @@ const AdminSubCategoryAdd = () => {
     // post method --------------
 
     axios
-      .post("https://restaurantbackend.softplatoon.com/api/add-sub-category", data, {
+      .post("https://backend.ap.loclx.io/api/add-sub-category", data, {
         headers: headers,
       })
       .then((res) => {

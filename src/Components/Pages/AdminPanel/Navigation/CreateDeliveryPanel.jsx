@@ -46,7 +46,7 @@ const CreateDeliveryPanel = () => {
           };
           // get foodItem data ---------------
           axios
-            .get(`https://restaurantbackend.softplatoon.com/api/delivery-man-info/${deliveryManId}`, {
+            .get(`https://backend.ap.loclx.io/api/delivery-man-info/${deliveryManId}`, {
               headers: headers,
             })
             .then((res) => {
@@ -83,7 +83,7 @@ const CreateDeliveryPanel = () => {
         console.log(data);
         // post method --------------
         axios
-          .post("https://restaurantbackend.softplatoon.com/api/create-delivery-panel", data, {
+          .post("https://backend.ap.loclx.io/api/create-delivery-panel", data, {
             headers: headers,
           })
           .then((res) => {
