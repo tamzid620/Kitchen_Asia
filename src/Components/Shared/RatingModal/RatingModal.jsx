@@ -58,7 +58,7 @@ const RatingModal = ({ closeModal, id }) => {
         </h1>
         {/* hidden input field ----- */}
         <div className="flex justify-center">
-          <input className="text-black" name="id" value={id} />
+          <input className="text-black" type="hidden" name="id" value={id} />
         </div>
 
         {/* --------------review option -------------- */}

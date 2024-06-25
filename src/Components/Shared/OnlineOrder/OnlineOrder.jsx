@@ -126,9 +126,6 @@ const OnlineOrder = () => {
                           {onlineOrder.foodName}
                         </h3>
                         <h3 className="text-black font-semibold">
-                          {onlineOrder.id}
-                        </h3>
-                        <h3 className="text-black font-semibold">
                           {onlineOrder.description}
                         </h3>
                       </h2>
