@@ -1,14 +1,36 @@
+import "./SpecialMenu.css";
 import { BsHeartFill } from "react-icons/bs";
 import { toast } from "react-toastify";
 import Aos from "aos";
 import "aos/dist/aos.css";
 // import bgBanner1 from "../../../../public/images/DSCF7688.jpg";
-import hr from '../../../../public/icons/hr.png'
+import hr from "../../../../public/icons/hr.png";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const SpecialMenu = () => {
-  Aos.init();
+  const [specialItem, setSpecialItem] = useState("");
 
-  const handleWishlist = () => {
+  useEffect(() => {
+    Aos.init();
+    axios
+      .get("https://backend.ap.loclx.io/api/food-item-list")
+      .then((res) => {
+        const specialItemData = res.data.foodItem.filter(
+          (item) => item.priority === "special"
+        );
+        setSpecialItem(specialItemData);
+      })
+      .catch((error) => {
+        console.error("Error fetching menu data:", error);
+      });
+  }, []);
+
+  const handleWishlist = (item) => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const updatedWishlist = [...wishlist, item];
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+
     toast.success("Item added to Wishlist!", {
       position: "top-right",
       autoClose: 5000,
@@ -22,14 +44,7 @@ const SpecialMenu = () => {
   };
 
   return (
-    <div
-      // style={{
-      //   backgroundImage: `url(${bgBanner1})`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      // }}
-      className="relative bg-transparent"
-    >
+    <div className="relative bg-transparent">
       <div className="absolute inset-0 bg-black opacity-60" />
       <div
         className="max-w-screen-xl mx-auto pt-20  pb-10"
@@ -52,250 +67,57 @@ const SpecialMenu = () => {
         </div>
 
         {/*------------------------- information section ------------------------ */}
-        <div className=" flex justify-center 
-        sm: ms-2 sm: me-2 lg:ms-0 lg:me-0 mt-10">
-          <div className="mt-5 text-white grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 lg:gap-20">
-            {/* grid section------1  */}
-            <div>
-              {/* item-1 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Chicken Parmesan <span> --------------</span>
-                      </h1>
-                      <p className="">Mexican</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$10.00</p>
-                    </div>
+        <div className="max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+          {specialItem &&
+            specialItem.map((item) => (
+              <div
+                key={item.id}
+                className="border-t-2 border-[#bc161c] 
+                  shadow-md shadow-[#bc161c] bg-white rounded overflow-hidden"
+              >
+                <div className="card-zoom w-[325px] shadow-md shadow-gray-500">
+                  <div className=" w-[325px]  bg-base-100 rounded-none  ">
+                    <figure className="zoom-effect">
+                      <img
+                        className="w-full h-40 object-cover object-center"
+                        src={item.imgLink}
+                        alt={item.foodName}
+                      />
+                    </figure>
                   </div>
-                </label>
-              </div>
-              <br />
-              {/* item-2 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Dan Dan Noodles <span> --------------</span>
-                      </h1>
-                      <p className="">Mexican</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$06.00</p>
-                    </div>
-                  </div>
-                </label>
-              </div>
-              <br />
-              {/* item-3 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Chicken Parmesan <span> --------------</span>
-                      </h1>
-                      <p className="">Italian</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$10.00</p>
-                    </div>
-                  </div>
-                </label>
-              </div>
-              <br />
-              {/* item-4 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Chicken Parmesan <span> --------------</span>
-                      </h1>
-                      <p className="">Mexican</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$10.00</p>
-                    </div>
-                  </div>
-                </label>
-              </div>
-              <br />
-              {/* item-5 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Chicken Parmesan <span> --------------</span>
-                      </h1>
-                      <p className="">Mexican</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$10.00</p>
-                    </div>
-                  </div>
-                </label>
-              </div>
-              <br />
-            </div>
-            {/* grid section------2  */}
-            <div>
-              {/* item-6 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Chicken Parmesan <span> --------------</span>
-                      </h1>
-                      <p className="">Mexican</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$10.00</p>
-                    </div>
-                  </div>
-                </label>
-              </div>
-              <br />
-              {/* item-7 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Dan Dan Noodles <span> --------------</span>
-                      </h1>
-                      <p className="">Mexican</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$06.00</p>
-                    </div>
-                  </div>
-                </label>
-              </div>
-              <br />
-              {/* item-8 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Chicken Parmesan <span> --------------</span>
-                      </h1>
-                      <p className="">Mexican</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$10.00</p>
-                    </div>
-                  </div>
-                </label>
-              </div>
-              <br />
-              {/* item-9 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Chicken Parmesan <span> --------------</span>
-                      </h1>
-                      <p className="">Mexican</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$10.00</p>
-                    </div>
-                  </div>
-                </label>
-              </div>
-              <br />
-              {/* item-10 -------------------------- */}
-              <div>
-                <label className="flex ">
-                  <input
-                    type="checkbox"
-                    name="radio-10"
-                    className="radio radio-warning mb-3"
-                  />
-                  <div className="flex items-start ms-3 gap-5 font-semibold">
-                    <div>
-                      <h1 className="text-lg text-[#f9941e]">
-                        Chicken Parmesan <span> --------------</span>
-                      </h1>
-                      <p className="">Mexican</p>
-                    </div>
-                    <div>
-                      <p className="text-[#f9941e]">$10.00</p>
-                    </div>
-                  </div>
-                </label>
-              </div>
-              <br />
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <button
-            onClick={handleWishlist}
-            className="flex items-center border-2
-             border-[#f9941e] bg-transparent text-[#f9941e]
-             hover:border-[#bc161c] hover:text-white 
+                </div>
+                  <input  type="hidden" name="id" value={item.id} />
+                  
+                <div className="p-4">
+                  <h1 className="text-xl text-[#bc161c] font-semibold mb-2">
+                    {item.foodName}
+                  </h1>
+                  <p className="font-semibold">{item.price} ৳</p>
+                  <div className="flex justify-start text-center">
+                    <button
+                      onClick={() =>
+                        handleWishlist({
+                          id: item.id ,
+                          foodName: item.foodName,
+                          price: item.price,
+                          imgLink: item.imgLink,
+                        })
+                      }
+                      className=" flex items-center  border-2
+             border-[#f9941e] bg-transparent
+                        text-[#bc161c]
+                      hover:border-[#f9941e] hover:bg-[#bc161c] hover:text-white 
 font-bold px-3 py-1  mt-3 rounded-md "
-          >
-            Add to Wishlist{" "}
-            <span className="ms-1">
-              <BsHeartFill />
-            </span>
-          </button>
+                    >
+                      Add to Wishlist{" "}
+                      <span className="ml-1">
+                        <BsHeartFill />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </div>

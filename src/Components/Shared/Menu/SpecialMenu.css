@@ -1,0 +1,9 @@
+.card-zoom {
+    overflow: hidden;
+}
+.zoom-effect {
+    transition: transform 0.5s ease;
+}
+.zoom-effect:hover{
+    transform: scale(1.1);
+}

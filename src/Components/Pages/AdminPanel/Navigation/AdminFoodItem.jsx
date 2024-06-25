@@ -83,7 +83,7 @@ const AdminFoodItem = () => {
         navigate("/adminFoodItem");
       });
   };
-  // handlePriority section********************************
+  // handleStatus section********************************
   const handleStatus = (foodItemId) => {
     const user = JSON.parse(localStorage.getItem("user"));
     const headers = {
@@ -92,7 +92,7 @@ const AdminFoodItem = () => {
     };
     axios
       .get(
-        `https://backend.ap.loclx.io/api/status/${foodItemId}`,
+        `https://backend.ap.loclx.io/api/stat/${foodItemId}`,
         {
           headers: headers,
         }

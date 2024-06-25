@@ -35,7 +35,7 @@ const OnlineOrder = () => {
       .get(`https://backend.ap.loclx.io/api/add-to-cart/${id}`)
 
       .then((res) => {
-        toast.success("Item added to Cart!", {
+        toast.success(res.data.message, {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -49,7 +49,7 @@ const OnlineOrder = () => {
       .catch((error) => {
         Swal.fire({
           position: "center",
-          icon: "warning",
+          icon: "error",
           title: ("An error occurred:", error),
           showConfirmButton: false,
           timer: 1500,
